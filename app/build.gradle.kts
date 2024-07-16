@@ -9,6 +9,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
     checkstyle
+    id("org.openrewrite.rewrite") version("6.16.2")
     id("se.patrikerdes.use-latest-versions") version "0.2.18"
     id("com.github.ben-manes.versions") version "0.41.0"
 }
@@ -18,11 +19,19 @@ repositories {
     mavenCentral()
 }
 
+rewrite {
+    activeRecipe("org.openrewrite.staticanalysis.CodeCleanup")
+    // checkstyleConfigFile = file("../config/checkstyle/checkstyle.xml")
+}
+
+
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.10.1")
+
 
     // This dependency is used by the application.
     implementation(libs.guava)
@@ -35,6 +44,7 @@ java {
     }
 }
 
+group = "hexlet.code"
 application {
     // Define the main class for the application.
     mainClass = "hexlet.code.App"
