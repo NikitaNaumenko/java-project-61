@@ -1,24 +1,13 @@
 package hexlet.code.games;
-
-import java.util.Random;
+import hexlet.code.Utils;
 
 public final class Even {
 
     public static String[] getGameData() {
-        int question = getRandom();
+        int question = Utils.getRandom();
         String answer = isEven(question);
 
-        String[] result = {String.valueOf(question), answer};
-
-        return result;
-    }
-
-    public static int getRandom() {
-        Random random = new Random();
-
-        int randomInt = random.nextInt();
-
-        return randomInt;
+        return new String[]{String.valueOf(question), answer};
     }
 
     public static String getTask() {

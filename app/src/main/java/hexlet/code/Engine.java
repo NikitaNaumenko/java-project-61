@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
 
 import java.util.Scanner;
@@ -14,6 +15,8 @@ final class Engine {
                 gameData = Even.getGameData();
 
                 break;
+            case "3":
+                gameData = Calculator.getGameData();
 
             default:
 
@@ -30,6 +33,9 @@ final class Engine {
             case "2":
                 task = Even.getTask();
 
+                break;
+            case "3":
+                task = Calculator.getTask();
                 break;
 
             default:
@@ -85,8 +91,5 @@ final class Engine {
     private static final int INIT_ROUND = 1;
 
     private static final int ROUND_COUNTS = 3;
-
-    private Engine() {
-    }
 
 }
