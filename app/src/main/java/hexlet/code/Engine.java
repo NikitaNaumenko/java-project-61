@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
+import hexlet.code.games.Gcd;
 
 import java.util.Scanner;
 
@@ -17,6 +18,8 @@ final class Engine {
                 break;
             case "3":
                 gameData = Calculator.getGameData();
+            case "4":
+                gameData = Gcd.getGameData();
 
             default:
 
@@ -37,7 +40,9 @@ final class Engine {
             case "3":
                 task = Calculator.getTask();
                 break;
-
+            case "4":
+                task = Gcd.getTask();
+                break;
             default:
 
                 break;
