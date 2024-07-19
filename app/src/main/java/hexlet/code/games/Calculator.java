@@ -23,17 +23,17 @@ public class Calculator {
     private static String getOperation() {
         int random = Utils.getRandom(2);
         String[] operations;
-        operations = new String[]{"-", "+", "*"};
+        operations = new String[] {"-", "+", "*"};
         return operations[random];
     }
 
     private static String doCalc(int first, int second, String operation) {
-      int result = switch (operation) {
-          case "+" -> first + second;
-          case "-" -> first - second;
-          case "*" -> first * second;
-          default -> 0;
-      };
+        int result = switch (operation) {
+            case "+" -> first + second;
+            case "-" -> first - second;
+            case "*" -> first * second;
+            default -> 0;
+        };
         return String.valueOf(result);
     }
 }

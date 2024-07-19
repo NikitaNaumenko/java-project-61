@@ -1,65 +1,37 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Even;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Gcd;
+import hexlet.code.games.Calculator;
 
 import java.util.Scanner;
 
 final class Engine {
 
     public static String[] genGameData(String gameNumber) {
-        String[] gameData = new String[2];
-
-        switch (gameNumber) {
-            case "2":
-                gameData = Even.getGameData();
-
-                break;
-            case "3":
-                gameData = Calculator.getGameData();
-                break;
-
-            case "4":
-                gameData = Gcd.getGameData();
-                break;
-            case "5":
-                gameData = Progression.getGameData();
-                break;
-            case "6":
-                gameData = Prime.getGameData();
-                break;
-
-            default:
-
-                break;
-        }
+        String[] gameData = switch (gameNumber) {
+            case "2" -> Even.getGameData();
+            case "3" -> Calculator.getGameData();
+            case "4" -> Gcd.getGameData();
+            case "5" -> Progression.getGameData();
+            case "6" -> Prime.getGameData();
+            default -> new String[]{"error", "error"};
+        };
 
         return gameData;
     }
 
     public static String getGameTask(String gameNumber) {
-        String task = "";
-
-        switch (gameNumber) {
-            case "2":
-                task = Even.getTask();
-
-                break;
-            case "3":
-                task = Calculator.getTask();
-                break;
-            case "4":
-                task = Gcd.getTask();
-                break;
-            case "5":
-                task = Progression.getTask();
-                break;
-            case "6":
-                task = Prime.getTask();
-                break;
-            default:
-
-                break;
-        }
+        String task = switch (gameNumber) {
+            case "2" -> Even.getTask();
+            case "3" -> Calculator.getTask();
+            case "4" -> Gcd.getTask();
+            case "5" -> Progression.getTask();
+            case "6" -> Prime.getTask();
+            default -> "Error";
+        };
 
         return task;
     }
@@ -109,5 +81,4 @@ final class Engine {
     private static final int INIT_ROUND = 1;
 
     private static final int ROUND_COUNTS = 3;
-
 }

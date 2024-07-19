@@ -7,7 +7,7 @@ public class Prime {
         int question = Utils.getRandom();
         String answer = isPrime(question);
 
-        return new String[]{String.valueOf(question), answer};
+        return new String[] {String.valueOf(question), answer};
     }
 
     public static String getTask() {
@@ -15,16 +15,14 @@ public class Prime {
     }
 
     public static String isPrime(int n) {
-        // Corner case
-        if (n <= 1)
+        if (n <= 1) {
             return "no";
-
-        // Check from 2 to n-1
-        for (int i = 2; i < n; i++)
-            if (n % i == 0)
+        }
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
                 return "no";
-
+            }
+        }
         return "yes";
     }
-
 }
