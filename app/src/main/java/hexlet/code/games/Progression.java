@@ -3,6 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Utils;
 
 public class Progression {
+    private static final int MAX = 10;
+    private static final int MIN = 5;
+
     public static String[] getGameData() {
         int progressionLength = genProgressionLength();
         int[] progression = genProgression(progressionLength);
@@ -36,7 +39,7 @@ public class Progression {
     private static int[] genProgression(int progressionLength) {
         int[] progression = new int[progressionLength];
         int startProgression = Utils.getRandom();
-        int step = Utils.getRandom(10);
+        int step = Utils.getRandom(MAX);
         progression[0] = startProgression;
         for (int i = 1; i < progressionLength; i++) {
             progression[i] = progression[i - 1] + step;
@@ -46,10 +49,10 @@ public class Progression {
 
     private static int genProgressionLength() {
         int num = Utils.getRandom();
-        if (num < 5) {
-            return 5;
-        } else if (num > 10) {
-            return 10;
+        if (num < MIN) {
+            return MIN;
+        } else if (num > MAX) {
+            return MAX;
         }
         return num;
     }
