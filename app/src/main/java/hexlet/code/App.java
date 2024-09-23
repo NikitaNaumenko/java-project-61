@@ -17,7 +17,23 @@ public class App {
         System.out.print("Your choice: ");
         String choice = scanner.next();
 
-        Engine.run(choice);
+        if (choice.equals("1")) {
+            printWelcomeMessage(scanner);
+        } else if (choice.equals("0")) {
+            scanner.close();
+        } else {
+            Engine.run(choice);
+        }
+        scanner.close();
+    }
+
+    private static void printWelcomeMessage(Scanner scanner) {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String userName = scanner.next();
+
+        System.out.println("Hello, " + userName + "!");
+
         scanner.close();
     }
 }
