@@ -64,10 +64,9 @@ final class Engine {
                 System.out.println("Correct!");
                 currentRound++;
             } else {
-                System.out.println(
-                        userAnswer + " is wrong answer ;(. Correct answer was "
-                                + answer);
-                System.out.println("Let's try again, " + userName);
+                System.out.printf("'%s' is wrong answer ;(.%n", userAnswer);
+                System.out.printf("Correct answer was '%s'.%n", answer);
+                System.out.printf("Let's try again, %s!%n", userName);
 
                 return;
             }
