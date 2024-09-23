@@ -68,7 +68,6 @@ final class Engine {
                         userAnswer + " is wrong answer ;(. Correct answer was "
                                 + answer);
                 System.out.println("Let's try again, " + userName);
-                scanner.close();
 
                 return;
             }
