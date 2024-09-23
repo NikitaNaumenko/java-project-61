@@ -21,14 +21,15 @@ public class Progression {
     }
 
     private static String genQuestion(int[] progression, int progressionIndex) {
-        String question = "";
+        String[] arr = new String[progression.length];
         for (int i = 0; i < progression.length; i++) {
             if (i != progressionIndex) {
-                question += progression[i] + " ";
+                arr[i] = Integer.toString(progression[i]);
             } else {
-                question += " .. ";
+                arr[i] = "..";
             }
         }
+        String question = String.join(" ", arr);
         return question;
     }
 
